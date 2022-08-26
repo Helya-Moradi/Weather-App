@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mediaQuery.css" media="(max-width:550px)">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-side">
+            <div class="data-container">
+                <h2 class="week-day">Tuesday</h2>
+                <span class="nowmonthyear">19 june 2022</span>
+                <div class="country">
+                    <span class="location-icon">
+                        <img src="./icons/location.svg" alt="">
+                    </span>
+                    <span class="country-name">Paris, FR</span>
+                </div>
+            </div>
+            <div class="weather-container-today">
+                <span class="weather-desc-icon">
+                    <img src="./icons/sunny.svg" alt="">
+                </span>
+                <h1 class="weather-temp">29°C</h1>
+                <h3 class="weather-desc">Sunny</h3>
+            </div>
+        </div>
+        <div class="info-side">
+            <div class="today-info-container">
+                <div class="today-info">
+                    <div class="precipitation">
+                        <span class="title">precipitation</span>
+                        <span class="value">0 %</span>
+                    </div>
+                    <div class="humidity">
+                        <span class="title">humidity</span>
+                        <span class="value">34 %</span>
+                    </div>
+                    <div class="wind">
+                        <span class="title">wind</span>
+                        <span class="value">0 m/s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-container">
+                <ul class="week-list">
+                    <li class="active" data-id="0">
+                        <span class="day-icon">
+                            <img src="./icons/sunny.svg" alt="">
+                        </span>
+                        <span class="day-name">Tue</span>
+                        <span class="day-temp">30°C</span>
+                    </li>
+                    <li data-id="1">
+                        <span class="day-icon">
+                            <img src="./icons/cloudy.svg" alt="">
+                        </span>
+                        <span class="day-name">Wed</span>
+                        <span class="day-temp">21°C</span>
+                    </li>
+                    <li data-id="2">
+                        <span class="day-icon">
+                            <img src="./icons/snowy.svg" alt="">
+                        </span>
+                        <span class="day-name">Thu</span>
+                        <span class="day-temp">8°C</span>
+                    </li>
+                    <li data-id="3">
+                        <span class="day-icon">
+                            <img src="./icons/rainy.svg" alt="">
+                        </span>
+                        <span class="day-name">Fry</span>
+                        <span class="day-temp">23°C</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="location-container">
+                <div class="location">
+                    <button class="change-location">
+                        <span class="location-icon">
+                            <img src="./icons/location.svg" alt="">
+                        </span>
+                        <span class="button-text">Change location</span>
+                    </button>
+                    <div class="hidden-input hidden">
+                        <div class="input">
+                            <input type="text" placeholder="City name ...">
+                            <span class="enter">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

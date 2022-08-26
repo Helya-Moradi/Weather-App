@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-body: #343d4b;
+    --gradient: linear-gradient(135deg, #72eef2fb 10%, #5151e5 100%);
+    --white: #ffffff;
+    --bg-container: #222831;
+
+    --white-filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(166deg) brightness(106%) contrast(101%);
+    --dark-filter: invert(11%) sepia(5%) saturate(2983%) hue-rotate(177deg) brightness(98%) contrast(88%);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    color: var(--white);
+    background-color: var(--bg-container);
+    width: 630px;
+    height: 400px;
+    display: flex;
+    border-radius: 25px;
+}
+
+.weather-side {
+    width: 45%;
+    background-image: var(--gradient);
+    border-radius: 25px;
+    padding: 25px;
+    transform: translateZ(0) scale(1.02) perspective(1000px);
+    box-shadow: 0 0 20px -10px rgb(0 0 0 / 20%);
+    transition: transform 300ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather-side:hover {
+    transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.data-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.country {
+    margin-top: 10px;
+}
+
+.location-icon img {
+    width: 15px;
+    filter: var(--white-filter);
+}
+
+.weather-desc-icon img {
+    width: 60px;
+    filter: var(--white-filter);
+}
+
+.weather-temp {
+    font-size: 55px;
+}
+
+.info-side {
+    width: 55%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.today-info div {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.today-info div .title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.weather-container {
+    background: #343d4b2c;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.week-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.week-list li {
+    padding: 8px 15px;
+    height: 110px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: 200ms ease;
+}
+
+.week-list li:hover {
+    transform: scale(1.1);
+    background-color: var(--white);
+    color: var(--bg-container);
+    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+}
+
+.week-list li:hover img {
+    filter: var(--dark-filter);
+}
+
+.week-list li.active {
+    background-color: var(--white);
+    color: var(--bg-container);
+}
+
+.week-list li.active img {
+    filter: var(--dark-filter);
+}
+
+.week-list img {
+    width: 33px;
+    filter: var(--white-filter);
+}
+
+.day-temp {
+    font-weight: bold;
+}
+
+.location-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.change-location {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 9px;
+    border-radius: 20px;
+    background: var(--gradient);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: 200ms ease;
+}
+
+.change-location:hover {
+    transform: scale(.95);
+}
+
+.button-text {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.hidden-input {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 9px;
+    border-radius: 20px;
+    background: var(--gradient);
+    color: var(--white);
+    border: none;
+    transform: scale(.95);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.hidden-input input {
+    width: 88%;
+    padding-left: 10px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.hidden-input input::placeholder {
+    color: var(--white);
+}
+
+.enter {
+    display: inline-block;
+    margin-left: auto;
+    cursor: pointer;
+}
