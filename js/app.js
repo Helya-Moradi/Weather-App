@@ -18,12 +18,12 @@ changeLocationBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     dateUpdater();
 
-    if (localStorage.getItem('city')) {
-        let citySaver = localStorage.getItem('city');
-        console.log(citySaver);
-        fetchingData(citySaver, 0);
+    // if (localStorage.getItem('city')) {
+    //     let citySaver = localStorage.getItem('city');
+    //     console.log(citySaver);
+    //     fetchingData(citySaver, 0);
 
-    }
+    // }
 })
 enterInput.addEventListener('click', () => {
     fetchingData(inputCountry.value, 0);
@@ -51,7 +51,7 @@ function fetchingData(cityValue, cnt) {
     fetch(`${url.url}q=${cityValue}&cnt=4&appid=${url.key}`)
         .then(res => res.json())
         .then(data => {
-            localStorage.setItem('city', cityValue);
+            // localStorage.setItem('city', cityValue);
 
             const countryName = $.querySelector('.country-name');
 
